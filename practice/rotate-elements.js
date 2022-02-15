@@ -18,3 +18,16 @@ function rotateElements(arr, n) {
 
 
 console.log(rotateElements([1, 2, 3], 2));
+
+// Solution B 
+
+function rotateArray(arr, n) {
+  while (n > 0) {
+    arr.push(arr.shift());
+    n--;
+  }
+
+  return arr;
+}
+
+console.log(rotateArray([1, 2, 3], 1));

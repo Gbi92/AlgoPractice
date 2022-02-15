@@ -11,4 +11,16 @@ function camelcase(s) {
   return count;
 }
 
-//atirni for ciklussal!
+// Solution B
+
+function camelCaseCounter(string) {
+  let count = 1;
+
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] === string[i].toUpperCase()) {
+      count++;
+    }
+  }
+
+  return count;
+}
