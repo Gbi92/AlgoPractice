@@ -1,4 +1,4 @@
-function sockMerchant(n, ar) {
+function sockMerchant(ar) {
   let pairs = {};
   let count = 0;
 
