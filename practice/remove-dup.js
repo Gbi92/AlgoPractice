@@ -1,4 +1,4 @@
-function removeDuplicates(array) {
+function removeDuplicates(array) { //csak akkor jo, ha nem szamit a sorrend!
   let clean = [];
 
   array.sort((a,b) => a-b);
@@ -27,4 +27,20 @@ function removeDuplicates2(arr) {
   }
   
   return returnarr
+}
+
+// Solution C
+
+function removeDuplicates(array) {
+  const map = {}
+
+  for (const char of array) {
+    if (map[char]) {
+      map[char]++
+    } else {
+       map[char] = 1
+    }
+  }
+
+  return Object.keys(map) //The Object.keys() method returns an array of a given object's own enumerable property names, iterated in the same order that a normal loop would.
 }
