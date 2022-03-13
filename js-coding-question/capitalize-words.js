@@ -24,5 +24,5 @@ function capitalize2(str) {
 function capitalize3(str) {
   return str
       .split(' ')
-      .reduce((prev, current) => `${prev} ${current[0].toUpperCase() + current.slice(1)}`, '')
+      .reduce((prev, current) => `${prev}${current[0].toUpperCase() + current.slice(1)} `, '')
 }
