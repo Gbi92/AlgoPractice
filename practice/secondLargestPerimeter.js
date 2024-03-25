@@ -17,3 +17,21 @@ Should return 0, because the [2, 3, 4] triangle has the second largest perimeter
 secondLargestPerimeter([]);
 Should return -1
 */
+
+function secondLargestPerimeter(triangles) {
+  if (triangles.length < 2) {
+    return -1;
+  }
+  const perimeterIndex = {};
+  const perimeters = [];
+  triangles.forEach((el, i) => {
+    const perimeter = el.reduce((acc, curr) => acc+curr, 0);
+    perimeterIndex[perimeter] = i;
+    perimeters.push(perimeter);
+  });
+  perimeters.sort((a, b) => a - b);
+  const secondLargestPerimeter = perimeters[perimeters.length - 2];
+  return perimeterIndex[secondLargestPerimeter];
+}
+
+console.log(secondLargestPerimeter([[2, 3, 4], [7, 8, 9], [13, 14, 15], [4, 5, 6], [10, 11, 12]]));
